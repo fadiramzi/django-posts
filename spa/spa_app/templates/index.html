@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+
+    <script>
+        console.log('JS started')
+
+        window.onpopstate = (e)=>{
+            console.log(e.state)
+            showSection(e.state.section)
+        }
+
+        const showSection = (section)=>{
+            console.log(`load section ${section} from backend`)
+                    fetch(`http://localhost:8000/spa/${section}`)
+                    .then((response)=> response.text())
+                    .then((data)=>{
+                        console.log(data)
+                        
+                        document.querySelector('#root').innerHTML = data;
+                    })
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.querySelectorAll('button').forEach((btn)=>{
+                btn.onclick = ()=>{
+                    history.pushState({
+                            section:btn.dataset.section
+                        },'',btn.dataset.section)
+                    showSection(btn.dataset.section)
+                }
+            })
+        })
+
+        // Event listener for scrolling
+            window.onscroll = () => {
+                console.log(window.scrollY)
+    // Check if we're at the bottom
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+
+        // Change color to green
+        document.querySelector('body').style.background = 'green';
+    } else {
+
+        // Change color to white
+        document.querySelector('body').style.background = 'white';
+    }
+
+    };
+    </script>
+
+    <style>
+        .p-class{
+            background-color: gray;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>SPA</p>
+    <button data-section="1">Section 1</button>
+    <button data-section="2">Section 2</button>
+    <button data-section="3">Section 3</button>
+
+
+    <div id="root">
+HI
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+        <p class="p-class">HI</p>
+    </div>HI
+</body>HI
+</html>HI
